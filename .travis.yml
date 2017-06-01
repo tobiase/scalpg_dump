@@ -21,6 +21,6 @@ matrix:
 install: pip install -U tox
 
 # command to run tests, e.g. python setup.py test
-script: tox -e ${TOXENV}
+script: tox -e $TOX_ENV
 
 

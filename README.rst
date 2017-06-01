@@ -24,17 +24,15 @@ To dump the database go to a local directory that's associated with a Scalingo a
 
     scalpg_dump
 
+Scalingo PostgresSQL dumper requires a working installation of the Scalingo CLI
+Install Scalingo CLI: http://doc.scalingo.com/app/command-line-tool.html
+
 * Free software: MIT license
 * Documentation: https://scalpg-dump.readthedocs.io.
 
 
-Features
---------
-
-* TODO
-
 Credits
----------
+-------
 
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 

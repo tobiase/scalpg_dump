@@ -19,7 +19,7 @@ test_requirements = [
 
 setup(
     name='scalpg_dump',
-    version='0.1.2',
+    version='0.2.0',
     description="Dumps your Scalingo PostgreSQL database without the hustle",
     long_description=readme + '\n\n' + history,
     author="Tobias Englert",

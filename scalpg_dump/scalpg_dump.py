@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import argparse
 import os
 import subprocess
 
@@ -6,6 +7,10 @@ import dj_database_url
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Dump scalingo postgres databases.")
+    parser.add_argument("-v", "--version", help="Postgresql version")
+    args = parser.parse_args()
+
     # Get env vars
     p1 = subprocess.Popen(['scalingo', 'run', 'env'], stdout=subprocess.PIPE)
     p2 = subprocess.Popen(
@@ -23,7 +28,8 @@ def main():
     db_config = dj_database_url.parse(db_url)
 
     # Construct dump command
-    command = "dbclient-fetcher postgresql > /dev/null; "
+    version = "" if args.version is None else args.version + " "
+    command = "dbclient-fetcher postgresql {}> /dev/null; ".format(version)
     command += "PGPASSWORD={PASSWORD} "
     command += "pg_dump --clean --host {HOST} --port {PORT} "
     command += "--username {USER} "

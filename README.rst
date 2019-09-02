@@ -20,15 +20,30 @@ Scalingo PostgresSQL dumper
 
 Dumps your Scalingo PostgreSQL database without the hustle
 
-To dump the database go to a local directory that's associated with a Scalingo app and run::
-
-    scalpg_dump
+To dump the database go to a local directory that's associated with a Scalingo app
 
 Scalingo PostgresSQL dumper requires a working installation of the Scalingo CLI
 Install Scalingo CLI: http://doc.scalingo.com/app/command-line-tool.html
 
 * Free software: MIT license
 * Documentation: https://scalpg-dump.readthedocs.io.
+
+
+Usage
+-----
+
+Dump to file::
+
+    scalpg_dump > dump.sql
+
+Pass version to scalingos dbclient-fetcher::
+
+    scalpg_dump -v11
+
+Run for specific version / region::
+
+    SCALINGO_APP=your-app SCALINGO_REGION=agora-fr1 scalpg_dump
+
 
 
 Credits
